@@ -1,12 +1,3 @@
-// ================================================
-//  Console Banking Application (Pure JavaScript)
-// Run using: node index.js
-// ================================================
-
-// ================================================
-// LEVEL 2 + LEVEL 3 BANK OBJECT
-// ================================================
-
 const bank = {
   bankName: "OpenAI National Bank",
   accounts: [],
@@ -130,12 +121,12 @@ const bank = {
     }
 
     if (amount <= 0) {
-      console.log("❌ Transfer amount must be greater than 0.");
+      console.log(" Transfer amount must be greater than 0.");
       return;
     }
 
     if (amount > sender.balance) {
-      console.log("❌ Transfer Failed: Insufficient Balance!");
+      console.log(" Transfer Failed: Insufficient Balance!");
       return;
     }
 
@@ -155,7 +146,7 @@ const bank = {
       from: fromAcc,
     });
 
-    console.log(`✅ Transfer Successful: ₹${amount} from ${fromAcc} → ${toAcc}`);
+    console.log(` Transfer Successful: ₹${amount} from ${fromAcc} → ${toAcc}`);
   },
 
   // ============================================
@@ -166,7 +157,7 @@ const bank = {
     const account = this.findAccount(accNumber);
 
     if (!account) {
-      console.log("❌ Account Not Found!");
+      console.log(" Account Not Found!");
       return;
     }
 
@@ -174,7 +165,7 @@ const bank = {
 
     if (loanAmount > maxLoan) {
       console.log(
-        `❌ Loan Rejected! Max Loan Allowed: ₹${maxLoan}`
+        ` Loan Rejected! Max Loan Allowed: ₹${maxLoan}`
       );
       return;
     }
@@ -188,7 +179,7 @@ const bank = {
     });
 
     console.log(
-      `🏦 Loan Approved: ₹${loanAmount} credited to Acc No ${accNumber}`
+      ` Loan Approved: ₹${loanAmount} credited to Acc No ${accNumber}`
     );
   },
 
@@ -199,7 +190,7 @@ const bank = {
     const account = this.findAccount(accNumber);
 
     if (!account || account.type !== "savings") {
-      console.log("❌ Interest only applies to Savings accounts.");
+      console.log(" Interest only applies to Savings accounts.");
       return;
     }
 
@@ -212,7 +203,7 @@ const bank = {
     });
 
     console.log(
-      `📈 Interest Added: ₹${interest} to Acc No ${accNumber}`
+      ` Interest Added: ₹${interest} to Acc No ${accNumber}`
     );
   },
 
@@ -220,7 +211,7 @@ const bank = {
   // Show All Accounts
   // ============================================
   showAllAccounts: function () {
-    console.log("\n📌 All Bank Accounts:");
+    console.log("\n All Bank Accounts:");
     console.table(
       this.accounts.map((acc) => ({
         Account: acc.accountNumber,
@@ -246,7 +237,7 @@ const bank = {
       0
     );
 
-    console.log("\n🏦 BANK SUMMARY");
+    console.log("\n BANK SUMMARY");
     console.log("=================================");
     console.log("Total Bank Balance:", totalBalance);
     console.log("Total Loans Given:", totalLoans);
@@ -260,11 +251,11 @@ const bank = {
     const account = this.findAccount(accNumber);
 
     if (!account) {
-      console.log("❌ Account Not Found!");
+      console.log(" Account Not Found!");
       return;
     }
 
-    console.log(`\n📜 Transaction History for Acc No ${accNumber}`);
+    console.log(`\n Transaction History for Acc No ${accNumber}`);
     console.table(account.transactions);
   },
 };
@@ -273,7 +264,7 @@ const bank = {
 // 🚀 AUTOMATIC DEMO RUN (When node index.js executed)
 // =====================================================
 
-console.log("\n🏦 Welcome to Console Banking System\n");
+console.log("\n Welcome to Console Banking System\n");
 
 // Create Accounts
 bank.createAccount("Vishal", "savings");
@@ -303,5 +294,5 @@ bank.showTransactions(1001);
 // Bank Summary
 bank.bankSummary();
 
-console.log("\n✅ Banking Application Finished Successfully!\n");
+console.log("\n Banking Application Finished Successfully!\n");
   
