@@ -1,11 +1,7 @@
-// ================================
-// Task Manager - JavaScript Console App
-// ================================
-
-// ✅ Tasks Array to store task objects
+//  Tasks Array to store task objects
 let tasks = [];
 
-// ✅ Auto Increment ID Counter
+//  Auto Increment ID Counter
 let taskId = 1;
 
 // ================================
@@ -19,14 +15,14 @@ const addTask = (title) => {
   };
 
   tasks.push(newTask);
-  console.log(`✅ Task Added: "${title}"`);
+  console.log(` Task Added: "${title}"`);
 };
 
 // ================================
 // 2. Get All Tasks Function
 // ================================
 const getAllTasks = () => {
-  console.log("\n📌 All Tasks:");
+  console.log("\n All Tasks:");
   console.table(tasks);
 };
 
@@ -38,9 +34,9 @@ const completeTask = (id) => {
 
   if (task) {
     task.status = "completed";
-    console.log(`✅ Task Completed: "${task.title}"`);
+    console.log(` Task Completed: "${task.title}"`);
   } else {
-    console.log("❌ Task Not Found!");
+    console.log(" Task Not Found!");
   }
 };
 
@@ -53,9 +49,9 @@ const deleteTask = (id) => {
   tasks = tasks.filter((t) => t.id !== id);
 
   if (tasks.length < beforeLength) {
-    console.log(`🗑️ Task Deleted (ID: ${id})`);
+    console.log(` Task Deleted (ID: ${id})`);
   } else {
-    console.log("❌ Task Not Found!");
+    console.log(" Task Not Found!");
   }
 };
 
@@ -64,7 +60,7 @@ const deleteTask = (id) => {
 // ================================
 const showTaskTitles = () => {
   const titles = tasks.map((t) => t.title);
-  console.log("\n📌 Task Titles:", titles);
+  console.log("\n Task Titles:", titles);
 };
 
 // ================================
